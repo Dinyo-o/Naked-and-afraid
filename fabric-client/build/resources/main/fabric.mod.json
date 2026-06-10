@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "servercontrol",
+  "version": "1.0.0",
+  "name": "ServerControl Client",
+  "description": "Client-side companion for the ServerControl Paper plugin.",
+  "authors": [
+    "ServerControl"
+  ],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.servercontrol.fabric.ServerControlClient"
+    ]
+  },
+  "mixins": [
+    "servercontrol-client.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "fabric-api": "*",
+    "minecraft": "1.21.11",
+    "java": ">=21"
+  }
+}
