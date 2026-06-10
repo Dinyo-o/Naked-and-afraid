@@ -1,0 +1,22 @@
+plugins {
+    id "net.fabricmc.fabric-loom-remap" version "1.15.5" apply false
+}
+
+allprojects {
+    group = "net.servercontrol"
+    version = "1.0.0"
+}
+
+subprojects {
+    plugins.withType(JavaPlugin).configureEach {
+        java {
+            sourceCompatibility = JavaVersion.VERSION_21
+            targetCompatibility = JavaVersion.VERSION_21
+        }
+
+        tasks.withType(JavaCompile).configureEach {
+            options.encoding = "UTF-8"
+            options.release = 21
+        }
+    }
+}
