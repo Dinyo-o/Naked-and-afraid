@@ -1,0 +1,19 @@
+plugins {
+    id "java-library"
+}
+
+base {
+    archivesName = "servercontrol-paper"
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:${project.paper_api_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("plugin.yml") {
+        expand(version: project.version)
+    }
+}

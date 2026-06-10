@@ -1,0 +1,39 @@
+# Message/tab feature values use normal on/off semantics:
+# true = allowed/visible; false = blocked/suppressed.
+# Gameplay effect feature values are active when true.
+features:
+  tab-list: true
+  public-chat: true
+  death-messages: true
+  join-messages: true
+  quit-messages: true
+  advancement-messages: true
+  armor-damage: false
+  death-sound: false
+  custom-death-sound: false
+
+mechanics:
+  # Hearts per second, 0 to 5 in 0.5-step increments.
+  armor-damage-hearts-per-second: 1.0
+  armor-damage-items:
+    mob-heads: false
+    carved-pumpkins: false
+    elytras: false
+  # Custom MP3 death sound volume only. The Iron Golem fallback always uses normal volume.
+  death-sound-volume-percent: 100.0
+  custom-death-sound-file: "sounds/death.mp3"
+  custom-death-sound-chunk-bytes: 16000
+  custom-death-sound-chunks-per-tick: 4
+
+client-assets:
+  # Generated on first start. The client uses this stable id instead of the server IP
+  # so cached custom sounds survive IP changes and are replaced when this server's file changes.
+  server-id: ""
+
+handshake:
+  timeout-millis: 5000
+  kick-message: "<red>This server requires the ServerControl Fabric client mod.</red>"
+
+messages:
+  prefix: "<gray>[<aqua>ServerControl</aqua>]</gray>"
+  chat-blocked: "<red>Public chat is currently disabled.</red>"

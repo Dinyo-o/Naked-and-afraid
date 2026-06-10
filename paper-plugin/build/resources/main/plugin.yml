@@ -1,0 +1,106 @@
+name: ServerControl
+version: 1.0.0
+main: net.servercontrol.paper.ServerControlPlugin
+description: Server-authoritative moderation, message, and Hardcore-safe gameplay control.
+api-version: "1.21"
+author: ServerControl
+commands:
+  servercontrol:
+    description: Control ServerControl features.
+    usage: /servercontrol <gui|status|reload|chat|tab|death|join|quit|advancement> [on|off]
+    permission: servercontrol.command
+permissions:
+  servercontrol.command:
+    description: Allows the ServerControl root commands to appear and be used.
+    default: op
+  servercontrol.all:
+    description: Allows every ServerControl command and GUI control.
+    default: op
+    children:
+      servercontrol.command: true
+      servercontrol.gui: true
+      servercontrol.settings: true
+      servercontrol.command.gui: true
+      servercontrol.command.status: true
+      servercontrol.command.reload: true
+      servercontrol.command.chat: true
+      servercontrol.command.tab: true
+      servercontrol.command.death: true
+      servercontrol.command.join: true
+      servercontrol.command.quit: true
+      servercontrol.command.advancement: true
+      servercontrol.command.armor-damage: true
+      servercontrol.command.death-sound: true
+      servercontrol.command.custom-death-sound: true
+      servercontrol.command.reload-death-sound: true
+      servercontrol.command.armor-damage-amount: true
+  servercontrol.gui:
+    description: Allows opening the ServerControl dialog GUI. Visible controls still require their own command permissions.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.settings:
+    description: Allows access to every option in the ServerControl Settings GUI page.
+    default: op
+    children:
+      servercontrol.gui: true
+  servercontrol.command.gui:
+    description: Legacy alias for opening the ServerControl dialog GUI. Prefer servercontrol.gui.
+    default: op
+    children:
+      servercontrol.gui: true
+  servercontrol.command.status:
+    description: Allows viewing ServerControl status.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.reload:
+    description: Allows reloading ServerControl configuration.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.chat:
+    description: Allows toggling public chat.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.tab:
+    description: Allows toggling tab list access.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.death:
+    description: Allows toggling death messages.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.join:
+    description: Allows toggling join messages.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.quit:
+    description: Allows toggling quit messages.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.advancement:
+    description: Allows toggling advancement messages.
+    default: op
+    children:
+      servercontrol.command: true
+  servercontrol.command.armor-damage:
+    description: Allows toggling armor damage in the GUI.
+    default: op
+  servercontrol.command.armor-damage-amount:
+    description: Allows changing armor damage hearts per second in the GUI.
+    default: op
+  servercontrol.command.death-sound:
+    description: Allows toggling automatic death sounds in the GUI.
+    default: op
+  servercontrol.command.custom-death-sound:
+    description: Allows toggling custom MP3 death sounds in the GUI.
+    default: op
+  servercontrol.command.reload-death-sound:
+    description: Allows reloading and syncing the custom MP3 death sound in the GUI.
+    default: op
