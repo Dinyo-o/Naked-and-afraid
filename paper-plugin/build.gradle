@@ -8,6 +8,7 @@ base {
 
 dependencies {
     compileOnly "io.papermc.paper:paper-api:${project.paper_api_version}"
+    implementation "org.bstats:bstats-bukkit:3.1.0"
 }
 
 processResources {
@@ -15,5 +16,14 @@ processResources {
 
     filesMatching("plugin.yml") {
         expand(version: project.version)
+    }
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { dependency ->
+            dependency.isDirectory() ? dependency : zipTree(dependency)
+        }
     }
 }

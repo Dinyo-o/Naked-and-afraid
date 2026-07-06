@@ -1,32 +1,33 @@
 # Minecraft Naked And Afraid
 
-PaperMC plugin for Minecraft Java Edition 1.21.11.
+PaperMC plugin for Minecraft Java Edition 1.21.11. There is no client mod.
 
-Install the Paper jar in the server `plugins` folder.
-
-## Getting started
-
-To begin, make sure you are an operator and type `/na gui`. From there, it should be obvious, and to use the deafult, open settings and click the Naked and afraid deafult/
-
-## Commands
+## Project Structure
 
 ```text
-/nakedandafraid gui
-/nakedandafraid status
-/nakedandafraid reload
-/nakedandafraid chat on
-/nakedandafraid chat off
-/nakedandafraid tab on
-/nakedandafraid tab off
-/nakedandafraid death off
-/nakedandafraid join off
-/nakedandafraid quit off
-/nakedandafraid advancement off
+.
++-- paper-plugin/    # PaperMC 1.21.11 server plugin
 ```
 
-also use: `/na`
+## Build
 
-## Deafult Configuration in the config file
+Use JDK 21 or newer and Gradle 9.2+.
+
+```bash
+gradle build
+```
+
+Artifact:
+
+```text
+paper-plugin/build/libs/nakedandafraid-paper-1.0.5.jar
+```
+
+Install the Paper jar in the server `plugins/` folder.
+
+This plugin uses bStats for anonymous usage metrics. Server owners can opt out globally in `plugins/bStats/config.yml`.
+
+## Configuration
 
 The Paper plugin creates `plugins/NakedAndAfraid/config.yml`:
 
@@ -50,7 +51,25 @@ mechanics:
     elytras: false
 ```
 
-## Advanced stuff... for the nerds lol!
+`tab-list: false` hides the player list using Paper player-list visibility. If `spectators-can-see-tab-list: true`, spectators can still see the full tab list while other players cannot.
+
+## Commands
+
+```text
+/nakedandafraid gui
+/nakedandafraid status
+/nakedandafraid reload
+/nakedandafraid chat on
+/nakedandafraid chat off
+/nakedandafraid tab on
+/nakedandafraid tab off
+/nakedandafraid death off
+/nakedandafraid join off
+/nakedandafraid quit off
+/nakedandafraid advancement off
+```
+
+Alias: `/na`
 
 Permissions use the `nakedandafraid` prefix:
 

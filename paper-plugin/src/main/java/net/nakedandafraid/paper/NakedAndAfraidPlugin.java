@@ -2,6 +2,7 @@ package net.nakedandafraid.paper;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
@@ -16,6 +17,8 @@ import java.util.Locale;
 import java.util.Map;
 
 public final class NakedAndAfraidPlugin extends JavaPlugin {
+    private static final int BSTATS_PLUGIN_ID = 32429;
+
     private final ControlState state = new ControlState();
     private final MiniMessage miniMessage = MiniMessage.miniMessage();
 
@@ -23,6 +26,8 @@ public final class NakedAndAfraidPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        new Metrics(this, BSTATS_PLUGIN_ID);
+
         saveDefaultConfig();
         migrateConfigKeys();
         getConfig().options().copyDefaults(true);
