@@ -3,7 +3,7 @@ plugins {
 }
 
 base {
-    archivesName = "servercontrol-paper"
+    archivesName = "nakedandafraid-paper"
 }
 
 dependencies {

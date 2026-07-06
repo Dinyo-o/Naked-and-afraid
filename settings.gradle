@@ -1,9 +1,5 @@
 pluginManagement {
     repositories {
-        maven {
-            name = "Fabric"
-            url = "https://maven.fabricmc.net/"
-        }
         gradlePluginPortal()
         mavenCentral()
     }
@@ -13,15 +9,11 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
         maven {
-            name = "Fabric"
-            url = "https://maven.fabricmc.net/"
-        }
-        maven {
             name = "Paper"
             url = "https://repo.papermc.io/repository/maven-public/"
         }
     }
 }
 
-rootProject.name = "minecraft-server-control"
-include("fabric-client", "paper-plugin")
+rootProject.name = "minecraft-naked-and-afraid"
+include("paper-plugin")
