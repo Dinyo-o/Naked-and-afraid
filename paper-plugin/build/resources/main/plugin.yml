@@ -1,5 +1,5 @@
 name: NakedAndAfraid
-version: 1.0.5
+version: 2.0.2
 main: net.nakedandafraid.paper.NakedAndAfraidPlugin
 description: Server-authoritative moderation, message, and Hardcore-safe gameplay control.
 api-version: "1.21"

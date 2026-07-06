@@ -1,5 +1,6 @@
 plugins {
     id "java-library"
+    id "com.gradleup.shadow" version "9.2.2"
 }
 
 base {
@@ -20,10 +21,14 @@ processResources {
 }
 
 jar {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    from {
-        configurations.runtimeClasspath.collect { dependency ->
-            dependency.isDirectory() ? dependency : zipTree(dependency)
-        }
-    }
+    enabled = false
+}
+
+shadowJar {
+    archiveClassifier = ""
+    relocate "org.bstats", "net.nakedandafraid.paper.libs.bstats"
+}
+
+assemble {
+    dependsOn shadowJar
 }
