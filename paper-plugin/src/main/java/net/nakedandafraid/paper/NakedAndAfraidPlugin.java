@@ -17,7 +17,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public final class NakedAndAfraidPlugin extends JavaPlugin {
-    private static final int BSTATS_PLUGIN_ID = 32429;
+    private static final int BSTATS_PLUGIN_ID = 32431;
 
     private final ControlState state = new ControlState();
     private final MiniMessage miniMessage = MiniMessage.miniMessage();

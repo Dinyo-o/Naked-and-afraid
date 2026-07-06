@@ -20,7 +20,7 @@ gradle build
 Artifact:
 
 ```text
-paper-plugin/build/libs/nakedandafraid-paper-2.0.2.jar
+paper-plugin/build/libs/nakedandafraid-paper-2.0.4.jar
 ```
 
 Install the Paper jar in the server `plugins/` folder.

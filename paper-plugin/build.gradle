@@ -1,6 +1,6 @@
 plugins {
     id "java-library"
-    id "com.gradleup.shadow" version "9.2.2"
+    id "com.gradleup.shadow" version "9.3.1"
 }
 
 base {
@@ -9,7 +9,7 @@ base {
 
 dependencies {
     compileOnly "io.papermc.paper:paper-api:${project.paper_api_version}"
-    implementation "org.bstats:bstats-bukkit:3.1.0"
+    implementation "org.bstats:bstats-bukkit:3.2.1"
 }
 
 processResources {
@@ -26,6 +26,11 @@ jar {
 
 shadowJar {
     archiveClassifier = ""
+    dependencies {
+        exclude { dependency ->
+            dependency.moduleGroup != "org.bstats"
+        }
+    }
     relocate "org.bstats", "net.nakedandafraid.paper.libs.bstats"
 }
 
